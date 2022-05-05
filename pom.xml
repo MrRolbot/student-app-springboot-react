@@ -49,8 +49,8 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>src/main/java</sourceDirectory>
-        <testSourceDirectory>src/test/java</testSourceDirectory>
+        <sourceDirectory>src/main/java/com/mrrolbot/studentapp</sourceDirectory>
+        <testSourceDirectory>src/test/java/com/mrrolbot/studentapp</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
