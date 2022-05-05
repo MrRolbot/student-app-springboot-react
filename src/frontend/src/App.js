@@ -13,7 +13,7 @@ import {
     Badge,
     Tag,
     Avatar,
-    Space, Popconfirm
+    Space, Popconfirm, Image
 } from 'antd';
 
 import {
@@ -239,7 +239,13 @@ function App() {
                     {renderStudents()}
                 </div>
             </Content>
-            <Footer style={{textAlign: 'center'}}>By Mr. Rolbot ©2022</Footer>
+            <Footer style={{textAlign: 'center'}}>
+                <Image
+                    width={100}
+                    src="https://user-images.githubusercontent.com/98711977/166860545-664cd095-24f1-41f2-b8ec-4960840dbf9f.png">
+
+                </Image>
+            </Footer>
         </Layout>
     </Layout>
 
