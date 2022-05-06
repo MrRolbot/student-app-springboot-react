@@ -35,8 +35,8 @@ build/
 .vscode/
 
 ### Properities Files###
-
-
+/src/main/resources/application-dev.properties
+/src/main/resources/application.properties
 # dependencies
 **/node_modules
 **/.pnp
