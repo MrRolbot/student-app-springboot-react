@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 src/frontend/node/
-src/test
+
 
 ### STS ###
 .apt_generated
@@ -35,8 +35,7 @@ build/
 .vscode/
 
 ### Properities Files###
-src/main/resources/application.properties
-src/main/resources/application-dev.properties
+
 
 # dependencies
 **/node_modules
