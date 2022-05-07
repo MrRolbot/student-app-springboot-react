@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   backend:
-    image: "mrrolbot/springboot-react-fullstack:7.5.2022.19.26.3"
+    image: "mrrolbot/springboot-react-fullstack:7.5.2022.21.41.18"
     ports:
       - "80:8080"
     restart: "always"
