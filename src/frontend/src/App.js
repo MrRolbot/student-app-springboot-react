@@ -13,19 +13,21 @@ import {
     Badge,
     Tag,
     Avatar,
-    Space, Popconfirm, Image
+    Space,
+    Popconfirm,
+    Image
 } from 'antd';
 
 import {
-    DesktopOutlined,
     FileOutlined,
     TeamOutlined,
     UserOutlined,
-    RobotOutlined,
     LoadingOutlined,
     UserAddOutlined,
     EditOutlined,
     DeleteOutlined,
+    HomeOutlined,
+    ReadOutlined,
 } from '@ant-design/icons';
 
 import StudentDrawerForm from "./StudentDrawerForm";
@@ -74,40 +76,45 @@ const columns = fetchStudents => [
         align: 'center',
         width: '100px',
         render: (text, student) =>
-            <TheAvatar name={student['firstName']}/>
+            <TheAvatar name={student['firstName']}/>,
+        responsive: ['lg', 'md']
     },
     {
         title: 'ID',
         dataIndex: 'id',
         key: 'id',
-        width: '100px'
+        width: '100px',
+        responsive: ['lg', 'md']
     },
     {
         title: 'First name',
         dataIndex: 'firstName',
         key: 'firstName',
+        width: 150
     },
     {
         title: 'Last Name',
         dataIndex: 'lastName',
         key: 'lastName',
+        width: 150
     },
     {
         title: 'Gender',
         dataIndex: 'gender',
         key: 'gender',
-        width: '110px'
+        width: '110px',
+        responsive: ['lg', 'md']
     },
     {
         title: 'Email',
         dataIndex: 'email',
         key: 'email',
+        width: 200
     },
     {
         title: 'Actions',
         dataIndex: 'actions',
         key: 'actions',
-        fixed: 'right',
         render: (text, student) =>
             <Space>
                 <Button shape="round" icon={<EditOutlined/>}>Edit</Button>
@@ -119,7 +126,8 @@ const columns = fetchStudents => [
                     cancelText='No'>
                     <Button shape="round" icon={<DeleteOutlined/>}>Delete</Button>
                 </Popconfirm>
-            </Space>
+            </Space>,
+        width: 150
     },
 ];
 
@@ -197,7 +205,7 @@ function App() {
                         Add New Student
                     </Button>
                 </>}
-                pagination={{pageSize: 50}}
+                pagination={{pageSize: 20}}
                 scroll={{y: 500}}
                 rowKey={(student) => student.id}
             />
@@ -205,43 +213,42 @@ function App() {
     }
 
     return <Layout style={{minHeight: '100vh'}}>
-        <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed}>
-            <div className="logo"/>
-            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                <Menu.Item key="1" icon={<RobotOutlined/>}>
-                    Option 1
-                </Menu.Item>
-                <Menu.Item key="2" icon={<DesktopOutlined/>}>
-                    Option 2
-                </Menu.Item>
-                <SubMenu key="sub1" icon={<UserOutlined/>} title="User">
-                    <Menu.Item key="3">Tom</Menu.Item>
-                    <Menu.Item key="4">Bill</Menu.Item>
-                    <Menu.Item key="5">Alex</Menu.Item>
-                </SubMenu>
-                <SubMenu key="sub2" icon={<TeamOutlined/>} title="Team">
-                    <Menu.Item key="6">Team 1</Menu.Item>
-                    <Menu.Item key="8">Team 2</Menu.Item>
-                </SubMenu>
-                <Menu.Item key="9" icon={<FileOutlined/>}>
-                    Files
-                </Menu.Item>
-            </Menu>
-        </Sider>
+            <Sider
+                breakpoint="lg"
+                collapsible
+                collapsedWidth="0"
+                collapsed={collapsed}
+                onCollapse={setCollapsed}>
+                <div className="logo"/>
+                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+                    <Menu.Item key="1" icon={<HomeOutlined/>}>
+                        Home
+                    </Menu.Item>
+                    <SubMenu key="sub1" icon={<ReadOutlined/>} title="Classes">
+                        <Menu.Item key="3">Finance</Menu.Item>
+                        <Menu.Item key="4">Business</Menu.Item>
+                        <Menu.Item key="5">SCRUM</Menu.Item>
+                    </SubMenu>
+                    <SubMenu key="sub2" icon={<TeamOutlined/>} title="Teachers">
+                        <Menu.Item key="6">Mr. Roldan</Menu.Item>
+                        <Menu.Item key="8">Mr. Delgado</Menu.Item>
+                    </SubMenu>
+                    <Menu.Item key="9" icon={<FileOutlined/>}>
+                        Files
+                    </Menu.Item>
+                </Menu>
+            </Sider>
         <Layout className="site-layout">
-            <Header className="site-layout-background" style={{padding: 0}}/>
+            <Header className="site-layout-background header" style={{padding: 0}}><h1>Student Management</h1></Header>
             <Content style={{margin: '0 16px'}}>
-                <Breadcrumb style={{margin: '16px 0'}}>
-                    <Breadcrumb.Item>User</Breadcrumb.Item>
-                    <Breadcrumb.Item>Bill</Breadcrumb.Item>
-                </Breadcrumb>
+                <Breadcrumb style={{margin: '25px 0'}}></Breadcrumb>
                 <div className="site-layout-background" style={{padding: 24, minHeight: 360}}>
                     {renderStudents()}
                 </div>
             </Content>
             <Footer style={{textAlign: 'center'}}>
                 <Image
-                    width={100}
+                    width={120}
                     src="https://user-images.githubusercontent.com/98711977/166860545-664cd095-24f1-41f2-b8ec-4960840dbf9f.png">
 
                 </Image>

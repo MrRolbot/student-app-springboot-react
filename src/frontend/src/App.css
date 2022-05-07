@@ -7,6 +7,11 @@
   pointer-events: none;
 }
 
+.header {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -69,4 +74,50 @@
   position: absolute;
   right: 15px;
   top: 18px;
+}
+
+@media all and (max-width: 500px) {
+  .add-btn {
+    position: inherit;
+  }
+
+  .first-name{
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    display: inline;
+  }
+
+  .last-name{
+    position: absolute;
+    top: 160px;
+    right: 80px;
+    display: inline;
+  }
+
+  .email-drawer{
+    position: absolute;
+    top: 240px;
+    right: 80px;
+    display: inline;
+  }
+
+ .gender{
+   position: absolute;
+   top: 320px;
+   right: 130px;
+   display: inline;
+  }
+
+ .submit-button {
+   position: absolute;
+   top: 420px;
+   right: 250px;
+ }
+
+  .cancel-button {
+    position: absolute;
+    top: 420px;
+    right: 120px;
+  }
 }

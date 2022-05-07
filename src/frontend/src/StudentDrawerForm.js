@@ -44,6 +44,7 @@ function StudentDrawerForm({showDrawer, setShowDrawer, fetchStudents}) {
     };
 
     return <Drawer
+        className="drawer"
         title="Create new student"
         width={720}
         onClose={onCLose}
@@ -55,7 +56,7 @@ function StudentDrawerForm({showDrawer, setShowDrawer, fetchStudents}) {
                     textAlign: 'right',
                 }}
             >
-                <Button onClick={onCLose} style={{marginRight: 8}}>
+                <Button className="cancel-button" onClick={onCLose} style={{marginRight: 8}}>
                     Cancel
                 </Button>
             </div>
@@ -66,7 +67,7 @@ function StudentDrawerForm({showDrawer, setShowDrawer, fetchStudents}) {
               onFinish={onFinish}
         >
             <Row gutter={16}>
-                <Col span={12}>
+                <Col className="first-name" span={12}>
                     <Form.Item
                         name="firstName"
                         label="First Name"
@@ -75,7 +76,7 @@ function StudentDrawerForm({showDrawer, setShowDrawer, fetchStudents}) {
                         <Input placeholder="Please enter student first name"/>
                     </Form.Item>
                 </Col>
-                <Col span={12}>
+                <Col className="last-name" span={12}>
                     <Form.Item
                         name="lastName"
                         label="Last Name"
@@ -86,7 +87,7 @@ function StudentDrawerForm({showDrawer, setShowDrawer, fetchStudents}) {
                 </Col>
             </Row>
             <Row gutter={16}>
-                <Col span={12}>
+                <Col className="email-drawer" span={12}>
                     <Form.Item
                         name="email"
                         label="Email"
@@ -95,7 +96,7 @@ function StudentDrawerForm({showDrawer, setShowDrawer, fetchStudents}) {
                         <Input placeholder="Please enter student email"/>
                     </Form.Item>
                 </Col>
-                <Col span={12}>
+                <Col className="gender" span={12}>
                     <Form.Item
                         name="gender"
                         label="gender"
@@ -110,7 +111,7 @@ function StudentDrawerForm({showDrawer, setShowDrawer, fetchStudents}) {
                 </Col>
             </Row>
             <Row>
-                <Col span={12}>
+                <Col className="submit-button"  span={12}>
                     <Form.Item>
                         <Button type="primary" htmlType="submit">
                             Submit
